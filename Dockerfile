@@ -2,7 +2,7 @@ FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Install dependencies, FFmpeg, PulseAudio, Xvfb, dbus
+# Install dependencies, Netcat, FFmpeg, PulseAudio, Xvfb, dbus
 RUN apt-get update && apt-get install -y \
     wget \
     curl \
@@ -18,6 +18,8 @@ RUN apt-get update && apt-get install -y \
     libxss1 \
     libasound2 \
     dbus \
+    netcat-openbsd \
+    ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Cloudflare WARP
